@@ -1,0 +1,1 @@
+An android based phone application using android studio and Java. Made independently by Alex van der Meulen. Developed during 3rd year of college as first android application for project assignment in COP 3003.
