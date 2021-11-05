@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+// creating classes allows us to reuse this code for more applications
 class Person {
  //private:
  public:
