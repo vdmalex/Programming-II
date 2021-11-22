@@ -1,1 +1,3 @@
-An android based phone application using android studio and Java. Made independently by Alex van der Meulen. Developed during 3rd year of college as first android application for project assignment in COP 3003."# project" 
+An openEDG study guide aimed at preparation for the C++ certification exam
+
+developed by Alex van der Meulen using in class excercises from COP 3003 and Edube C++ courses
