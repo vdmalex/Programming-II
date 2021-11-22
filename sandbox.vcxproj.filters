@@ -27,6 +27,12 @@
     <ClCompile Include="Firefighter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="myException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Date.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Person.h">
@@ -36,6 +42,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Firefighter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="myException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Date.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

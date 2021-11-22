@@ -1,8 +1,9 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Firefighter.cpp
-  Mailperson.cpp
-  Person.cpp
+  Date.cpp
   sandbox.cpp
+C:\Users\Alex\source\repos\sandbox\sandbox.cpp(155,11): warning C4286: 'const myException &': is caught by base class ('const std::exception &') on line 152
+C:\Users\Alex\source\repos\sandbox\sandbox.cpp(155,37): warning C4101: 'e': unreferenced local variable
+C:\Users\Alex\source\repos\sandbox\sandbox.cpp(207,41): warning C4101: 'ex': unreferenced local variable
+C:\Users\Alex\source\repos\sandbox\sandbox.cpp(209,34): warning C4101: 'ex': unreferenced local variable
   Generating Code...
-  LINK : C:\Users\Alex\source\repos\sandbox\Debug\sandbox.exe not found or not built by the last incremental link; performing full link
   sandbox.vcxproj -> C:\Users\Alex\source\repos\sandbox\Debug\sandbox.exe

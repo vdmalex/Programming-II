@@ -139,14 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Date.cpp" />
     <ClCompile Include="Firefighter.cpp" />
     <ClCompile Include="Mailperson.cpp" />
+    <ClCompile Include="myException.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="sandbox.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Date.h" />
     <ClInclude Include="Firefighter.h" />
     <ClInclude Include="Mailperson.h" />
+    <ClInclude Include="myException.h" />
     <ClInclude Include="Person.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
