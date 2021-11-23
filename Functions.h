@@ -2,28 +2,17 @@
 #include <iostream>
 #include <string>
 
+void demoStaticAuto();                                  // function definition in main
 
-namespace MyNamespace {
-
-	// functions and variables can be accessed by the scope resolution operator
-	// ::
-	// example: MyNamespace::print();
-
-	void print() { std::cout << "hello from MyNamespace!" << std::endl;
-	}
-int myNumber = 1003;
+// functions and variables can be accessed by the scope resolution operator
+// ::
+// example: MyNamespace::function();
 
 
-void demonstrateNamespaces() {
-  std::cout << "functions and data can be accessed from namespaces\nby using the scope resolution operator ::"
-            << std::endl;
-
-	}
-}
 
 namespace Functions {
-void demonstrate_functions();
-void demonstrate_pass_by_value(int, int);
+void demonstrate_functions();							// function prototypes go within the namespace (if needed)
+void demonstrate_pass_by_value(int, int);               // returnType functionName(parameters)
 void demonstrate_pass_by_ref(int&, int&);
 void demonstrate_pass_by_address(int*, int*);			// name not required, only time
 void demonstrate_more_fuction_stuff();
@@ -43,7 +32,7 @@ void demonstrate_default_parameters();
   std::cout << "num1 is " << num1 << std::endl;
   std::cout << "num2 is " << num2 << std::endl;
 
-  demonstrate_pass_by_value(num1, num2);  // call
+  demonstrate_pass_by_value(num1, num2);                // call -> function(arguments)
   // passing a variable by value will not result in changing the value
   // because it is given a copy of that data
   std::cout << "back in calling function" << std::endl;
@@ -105,7 +94,7 @@ void demonstrate_more_fuction_stuff() {
   demonstrate_default_parameters();
 
   demonstrate_inline_fuctions();
-  std::cout << min(5, 6) << '\n';
+  std::cout << inlinemin(5, 6) << '\n';
   std::cout
       << "compiler creates: return 5 > 6 ? 6 : 5\n in place of min(5,6);\n";
   // std::cout << return 5 > 6 ? 6 : 5; << '\n';

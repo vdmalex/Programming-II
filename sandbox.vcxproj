@@ -155,7 +155,7 @@
     <ClInclude Include="Mailperson.h" />
     <ClInclude Include="myException.h" />
     <ClInclude Include="MyInterface.h" />
-    <ClInclude Include="MyNamespace.h" />
+    <ClInclude Include="Functions.h" />
     <ClInclude Include="Person.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

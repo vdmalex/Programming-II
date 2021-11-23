@@ -5,14 +5,13 @@
 #include <iostream>
 #include <string>
 
-#include "Firefighter.h"
-#include "Mailperson.h"
-#include "Person.h"
-#include "myException.h"
 #include "Date.h"
 #include "FeetInches.h"
-#include "MyNamespace.h"
-
+#include "Firefighter.h"
+#include "Mailperson.h"
+#include "Functions.h"
+#include "Person.h"
+#include "myException.h"
 
 // 6.6 times faster than std::bind!
 // anonymous, inline, 1 time functions
@@ -20,21 +19,21 @@ int invoke(int x, int y, function<int(int, int)> func) { return func(x, y); }
 int k = invoke(20, 10, [](int x, int y) -> int { return x + y; });
 // x + y
 // really +(x,y)
-// almost all but some exceptions for what operators can be overloaded (conditional, scope, sizeof, . , *)
-// must be existing operators
-// at least one must be user defined
-// can't change number of operands
-// precedence and associativity remain the same
+// almost all but some exceptions for what operators can be overloaded
+// (conditional, scope, sizeof, . , *) must be existing operators at least one
+// must be user defined can't change number of operands precedence and
+// associativity remain the same
 
 using namespace std;
 class Class {
-  friend class Friend;      // gives Friend access to private members
+  friend class Friend;  
+  // gives Friend access to private members
 
-                            // a class may be a friend of many classes 
-                            // a class may have many friends
-                            // a friend’s friend isn’t my friend 
-                            // friendship isn’t inherited – the subclass has to define its own friendships
-
+  // a class may be a friend of many classes
+  // a class may have many friends
+  // a friend’s friend isn’t my friend
+  // friendship isn’t inherited – the subclass has to define its own friendships
+  // ~openedg
 
  private:
   int field;
@@ -48,7 +47,7 @@ class Friend {
   }
 };
 class Stack {               // Stack: a last in first stucture that stores data
-                            // imagine stacking platse on a table
+                            // imagine stacking plates on a table
  private:
   int stackstore[100];
   int SP;
@@ -76,18 +75,18 @@ void procedural_stack_demo(void) {
   push(2);
   push(1);
   std::cout << pop() << std::endl;  // :: scope resolution operator
-  std::cout << pop() << std::endl;  
+  std::cout << pop() << std::endl;
   // SP = 34; example of something dangerous, would break the structure
   std::cout << pop() << std::endl;
 }
 // ** std::vector<int> == template class
-template <typename T>       // this is the template parameter declaration
-T max_nums(T x, T y)        // this is the function template definition for max<T>
+template <typename T>  // this is the template parameter declaration
+T max_nums(T x, T y)   // this is the function template definition for max<T>
 {
   return x + y;
 }
-                            // this is the template parameter declaration
-template <typename T>       // prototype for template
+// this is the template parameter declaration
+template <typename T>  // prototype for template
 T return_it(T x);
 class MyClass {};
 
@@ -100,17 +99,14 @@ void demo_exceptions();
 
 void class_inheritance();
 void demo_templates();
-void demo_static_auto();
+
 void autoFunc();
 void staticFunc();
 void demoFriend();
 void demoOverloadOperators();
 Date calculateDifference(Date d1, Date d2);
 
-
-
 int main() {
-  
   while (true) {
     std::cout << "Modes: \n1. Polymorphism Demo \n2. procedural_stack_demo "
                  "\n3. demonstrate_functions\n4. class_inheritance\n5. "
@@ -138,36 +134,31 @@ int main() {
         try {
           demo_exceptions();
           throw myException();
-        } 
-        catch (const exception& ex) {  // polymorphism
+        } catch (const exception& ex) {  // polymorphism
           std::cout << "Caught. " << ex.what() << std::endl;
-         
+
         } catch (const myException& e) {
           std::cout << "caught myException" << std::endl;
         }
-       
+
         break;
       case 7:
         demo_templates();
         break;
       case 8:
-        demo_static_auto();
+        demoStaticAuto();
         break;
       case 9:
         demoFriend();
         break;
-    case 10:
+      case 10:
         demoOverloadOperators();
-      break;
-    case 11:
-      demoOverloadOperators();
-      break;
-    case 12:
-      MyNamespace::demonstrateNamespaces();
-      break;
-    }
-  
+        break;
+      case 11:
+        demoOverloadOperators();
+        break;
 
+    }
   }
 }
 
@@ -194,17 +185,18 @@ T return_it(T x) {
 void demo_exceptions() {
   int num2 = 0;
   try {
-    if (num2 ==
-        0) {        // if we don't add this the program will fail during execution
-                    // the C++ language (unlike some other newer programming languages), 
-                    // division by zero doesn’t throw an exception by default
+    if (num2 == 0) {  // if we don't add this the program will fail during
+                      // execution the C++ language (unlike some other newer
+                      // programming languages), division by zero doesn’t throw
+                      // an exception by default
       throw std::invalid_argument("");
     }
     std::cout << 5 / num2;  // try this
     // end try scope
-  } catch (const std::invalid_argument& ex) { // catches a thrown std::invalid_argument
-    std::cout << "Can't divide by 0" << std::endl; // this line will execute
-  } catch (const std::exception& ex) {  // example of polymorphism
+  } catch (const std::invalid_argument&
+               ex) {  // catches a thrown std::invalid_argument
+    std::cout << "Can't divide by 0" << std::endl;  // this line will execute
+  } catch (const std::exception& ex) {              // example of polymorphism
     std::cout << "Caught you" << std::endl;
   } catch (...) {  // catch all standard exceptions
     std::cout << "Caught you all" << std::endl;
@@ -255,7 +247,7 @@ void polymorphism_demo() {
       // static cast as mailperson to use mailperson's drive method
       << "\nWe can also use Mailperson functions through static_cast \n"
       << static_cast<Firefighter*>(regular)->drive()
-      // will result in Firefighter's method UNLESS superclass drive is virtual 
+      // will result in Firefighter's method UNLESS superclass drive is virtual
       // from edube.org on static_cast
       /*I am of sound mind,
       I know what I am doing and I want to use the pointer to the superclass in
@@ -265,13 +257,7 @@ void polymorphism_demo() {
       << std::endl;
 }
 
-
-
-
-
-
-
-void demo_static_auto() {
+void demoStaticAuto() {
   for (int i = 0; i < 5; ++i) {
     staticFunc();  // will continue to give new values
   }
@@ -287,18 +273,18 @@ void autoFunc() {
 }
 
 void staticFunc() {
-  static int var = 99;  // exist continuously during the whole program execution
+  static int var = 99;          // exist continuously during the whole program execution
   cout << "static var = " << ++var << endl;
 }
 
 void demoFriend() {
-                    // usually, we will use inheritance over friend classes
-                    // see declaration of classes near top of main
-  Class o;          // create Class object
+  // usually, we will use inheritance over friend classes
+  // see declaration of classes near top of main
+  Class o;                      // create Class object
 
-  Friend f;         // create friend class object
+  Friend f;                     // create friend class object
 
-  f.DoIt(o);        // invoke method using o's method
+  f.DoIt(o);                    // invoke method using o's method
 }
 
 void demoOverloadOperators() {
@@ -308,23 +294,22 @@ void demoOverloadOperators() {
 
   Date difference;
   difference = today - halloween;
-  //std::cout << difference << endl;
-  //add calculateDifference(m1,m2) 
-  //std::cout << halloween - today << std::endl;
-  int feet1=4;
-  int feet2=3;
-  int inches1=4;
-  int inches2=3;
+  // std::cout << difference << endl;
+  // add calculateDifference(m1,m2)
+  // std::cout << halloween - today << std::endl;
+  int feet1 = 4;
+  int feet2 = 3;
+  int inches1 = 4;
+  int inches2 = 3;
   FeetInches height1(feet1, inches1);
   FeetInches height2(feet2, inches2);
 
-  FeetInches combined_height = height1 + height2;   // overloaded + to add FeetInches data
-  cout << combined_height << endl;                  // overloaded << to display FeetInches data
+  FeetInches combined_height =
+      height1 + height2;            // overloaded + to add FeetInches data
+  cout << combined_height << endl;  // overloaded << to display FeetInches data
 
   FeetInches reduced_height = height1 - height2;
   cout << reduced_height << endl;
 }
 
-Date calculateDifference(Date d1, Date d2) {
-
-    return d1; }
+Date calculateDifference(Date d1, Date d2) { return d1; }

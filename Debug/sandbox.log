@@ -1,6 +1,6 @@
 ﻿  sandbox.cpp
-C:\Users\Alex\source\repos\vdmalex\Programming-II\sandbox.cpp(145,11): warning C4286: 'const myException &': is caught by base class ('const std::exception &') on line 142
-C:\Users\Alex\source\repos\vdmalex\Programming-II\sandbox.cpp(145,37): warning C4101: 'e': unreferenced local variable
-C:\Users\Alex\source\repos\vdmalex\Programming-II\sandbox.cpp(205,41): warning C4101: 'ex': unreferenced local variable
-C:\Users\Alex\source\repos\vdmalex\Programming-II\sandbox.cpp(207,34): warning C4101: 'ex': unreferenced local variable
+C:\Users\Alex\source\repos\vdmalex\Programming-II\sandbox.cpp(140,11): warning C4286: 'const myException &': is caught by base class ('const std::exception &') on line 137
+C:\Users\Alex\source\repos\vdmalex\Programming-II\sandbox.cpp(140,37): warning C4101: 'e': unreferenced local variable
+C:\Users\Alex\source\repos\vdmalex\Programming-II\sandbox.cpp(197,16): warning C4101: 'ex': unreferenced local variable
+C:\Users\Alex\source\repos\vdmalex\Programming-II\sandbox.cpp(199,34): warning C4101: 'ex': unreferenced local variable
   sandbox.vcxproj -> C:\Users\Alex\source\repos\vdmalex\Programming-II\Debug\sandbox.exe

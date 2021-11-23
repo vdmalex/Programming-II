@@ -62,7 +62,7 @@
     <ClInclude Include="FeetInches.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MyNamespace.h">
+    <ClInclude Include="Functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
