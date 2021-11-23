@@ -2,7 +2,7 @@
 #define DATE_H
 
 #include <string>
-
+#include <iostream>
 class Date {
  private:
   int m_year;
@@ -22,9 +22,12 @@ class Date {
   int getYear() { return m_year; }
   int getMonth() { return m_month; }
   int getDay() { return m_day; }
-  int operator-(Date d1);				// operator overloading
-										// find days until date argument
+ 
+  Date operator-(Date d1);					// operator overloading
+											// find days until date argument
 
-};
+
+  };
+
 
 #endif

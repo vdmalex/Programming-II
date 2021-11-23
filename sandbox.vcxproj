@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Date.cpp" />
+    <ClCompile Include="FeetInches.cpp" />
     <ClCompile Include="Firefighter.cpp" />
     <ClCompile Include="Mailperson.cpp" />
     <ClCompile Include="myException.cpp" />
@@ -149,10 +150,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h" />
+    <ClInclude Include="FeetInches.h" />
     <ClInclude Include="Firefighter.h" />
     <ClInclude Include="Mailperson.h" />
     <ClInclude Include="myException.h" />
     <ClInclude Include="MyInterface.h" />
+    <ClInclude Include="MyNamespace.h" />
     <ClInclude Include="Person.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

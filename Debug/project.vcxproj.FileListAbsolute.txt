@@ -1,2 +1,0 @@
-C:\Users\Alex\source\repos\project\Debug\project.exe
-C:\Users\Alex\source\repos\project\Debug\project.pdb

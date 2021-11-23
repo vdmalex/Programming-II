@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 // creating classes allows us to reuse this code for more applications
 
 // class: 				"category" or "genre"
@@ -36,7 +37,7 @@ class Person {
   std::string dob = "0";
   // accessed by these methods
  public:
-static int numberOfPeople;				// static: value will be shared and modified by objects
+  static int numberOfPeople;				// static: value will be shared and modified by objects
   Person() {  }
   // this pointer -- this->age = age of class = age from parameters
   Person(int age) { this->age = age; }  // constructor
@@ -47,7 +48,8 @@ static int numberOfPeople;				// static: value will be shared and modified by ob
   int getAge() { return age; }
   void walk();							// function prototypes				
   std::string drive();					
-  virtual void print();					// virtual function may be overridden by subclasses
+  virtual void print();
+          // virtual function may be overridden by subclasses
   ~Person() {}							// destructor
 };
 
