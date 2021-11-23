@@ -13,11 +13,12 @@
 // a public component when used by any of the subclasses and looks like
 // a private component to the rest of the world.
 // in general, avoid multi-inheritance: 1 class inheriting from 2 different superclasses
+
 class Firefighter : public Person {
  public:
   std::string licenseExpiration = "";
   int stationCode = 0;
-
+ 
   std::string drive() { return "really fast";
   }
   using Person::Person;				// Person default constructor

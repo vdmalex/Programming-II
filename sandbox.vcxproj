@@ -145,8 +145,8 @@
     <ClCompile Include="Mailperson.cpp" />
     <ClCompile Include="myException.cpp" />
     <ClCompile Include="MyInterface.cpp" />
-    <ClCompile Include="Person.cpp" />
     <ClCompile Include="sandbox.cpp" />
+    <ClCompile Include="Person.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h" />
