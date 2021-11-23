@@ -1,2 +1,4 @@
 C:\Users\Alex\source\repos\sandbox\Debug\sandbox.exe
 C:\Users\Alex\source\repos\sandbox\Debug\sandbox.pdb
+C:\Users\Alex\source\repos\vdmalex\Programming-II\Debug\sandbox.exe
+C:\Users\Alex\source\repos\vdmalex\Programming-II\Debug\sandbox.pdb

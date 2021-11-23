@@ -1,5 +1,6 @@
 #pragma once
 #include "Person.h" // include superclass so C++ knows where to find it
+
 // class Y:{visibility specifier}X{...};
 // class Sub : public Super {
 // Private components will remain private, public components will remain public.
@@ -19,5 +20,5 @@ class Firefighter : public Person {
 
   std::string drive() { return "really fast";
   }
-
+  using Person::Person;				// Person default constructor
 };

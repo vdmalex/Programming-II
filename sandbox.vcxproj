@@ -143,6 +143,7 @@
     <ClCompile Include="Firefighter.cpp" />
     <ClCompile Include="Mailperson.cpp" />
     <ClCompile Include="myException.cpp" />
+    <ClCompile Include="MyInterface.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="sandbox.cpp" />
   </ItemGroup>
@@ -151,6 +152,7 @@
     <ClInclude Include="Firefighter.h" />
     <ClInclude Include="Mailperson.h" />
     <ClInclude Include="myException.h" />
+    <ClInclude Include="MyInterface.h" />
     <ClInclude Include="Person.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

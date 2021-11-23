@@ -29,24 +29,26 @@
 
 class Person {
 
- public:
-  // Person(int age) { this->age = age; }  // constructor
+ private:
+  
   int age = 0;             // default attributes
   std::string name = "0";  // private fields
   std::string dob = "0";
   // accessed by these methods
  public:
-  const int value = 10;							// const cannot be modified after setting
-  void setAge(int age) { this->age = age; }		// this pointer -- this->age = age of class = age from parameters
+static int numberOfPeople;				// static: value will be shared and modified by objects
+  Person() {  }
+  // this pointer -- this->age = age of class = age from parameters
+  Person(int age) { this->age = age; }  // constructor
+  const int value = 10;					// const cannot be modified after setting
+  void setAge(int age) { this->age = age; }		
   void setName(std::string name) { this->name = name; }
   void setDob(std::string dob) { this->dob = dob; }
   int getAge() { return age; }
-
-  void walk() { age++; }
-  // virtual std::string drive() { return "normal"; } // virtual function may be
-  // overridden by sublasses
-  std::string drive() { return "normal"; }
-  ~Person() {}  // destructor
+  void walk();							// function prototypes				
+  std::string drive();					
+  virtual void print();					// virtual function may be overridden by subclasses
+  ~Person() {}							// destructor
 };
 
 // example : class : animal subclasses : mammals,

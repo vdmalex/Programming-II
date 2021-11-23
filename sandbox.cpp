@@ -214,11 +214,16 @@ void demo_exceptions() {
 }
 void class_inheritance() {
   Person person;
-  std::cout << "Person age: " << person.age << std::endl;
-
+  std::cout << "Person age: " << person.getAge() << std::endl;
+  /*std::cout << "Person count: " << person.numberOfPeople << std::endl;*/
+  // create more people...
+  Person person1;
+  Person person2;
+  /*std::cout << "Person count after constructing 2 more objects: "
+            << person.numberOfPeople << std::endl;*/
   person.walk();
 
-  std::cout << "Person age after walk: " << person.age << std::endl;
+  std::cout << "Person age after walk: " << person.getAge() << std::endl;
   Mailperson mail;
   std::cout << mail.Person::drive() << std::endl;
   std::cout << "Mailperson after Person::drive() : "
@@ -414,7 +419,7 @@ void demoOverloadOperators() {
   Date today;
 
   std::cout << today.getMonth();
-//add calculateDifference(m1,m2) 
+  //add calculateDifference(m1,m2) 
   std::cout << halloween - today << std::endl;
 
 }
