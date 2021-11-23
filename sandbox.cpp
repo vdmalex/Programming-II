@@ -12,6 +12,7 @@
 #include "Mailperson.h"
 #include "Functions.h"
 #include "myException.h"
+#include "MyAbstractClass.h"
 
 // 6.6 times faster than std::bind!
 // anonymous, inline, 1 time functions
