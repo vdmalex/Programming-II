@@ -25,15 +25,61 @@ std::string Date::getISODate() {
   return str;
 }
 // operator overloading
-
+    
   Date Date::operator-(Date d1) { 
   Date result;
-    result.SetDate(m_year - d1.getYear(), m_month - d1.getMonth(),
-                   m_day - d1.getDay());
+  int rDay;
+  int rMonth;
+  int rYear;
+  if (m_day < d1.getDay())
+    rDay = m_day - d1.getDay() + daysInPreviousMonth(*this);
+  else
+    rDay = m_day - d1.getDay();
+  rYear = m_year - d1.getYear();
+    if (m_month < d1.getMonth()) {
+      rMonth = m_month - d1.getMonth() + 12;
+      rYear--;
+    } else
+      rMonth = m_month - d1.getMonth();
+    
+
+    result.SetDate(rYear, rMonth, rDay);
+    /*result.SetDate(m_year - d1.getYear(), m_month - d1.getMonth(),
+                   m_day - d1.getDay());*/
 
     return result;
   }  
 
+  int Date::daysInMonth(Date date) {
+   int month = date.getMonth();
+    switch (month) {
+      case 1 || 3 || 5 || 7 || 8 || 10 || 12:
+        return 31;
+     case 2:
+        if (date.getYear() % 4 == 0)
+          return 29;
+        else
+          return 28;
+     default:
+       return 30;
+    }
+    
+  }
+
+    int Date::daysInPreviousMonth(Date date) {
+    int month = date.getMonth()-1;
+    switch (month) {
+      case 1 || 3 || 5 || 7 || 8 || 10 || 12:
+        return 31;
+      case 2:
+        if (date.getYear() % 4 == 0)
+          return 29;
+        else
+          return 28;
+      default:
+        return 30;
+    }
+  }
 
   
   

@@ -23,6 +23,8 @@ class Date {
 
   Date operator-(Date d1);  // operator overloading
                             // find days until date argument
+  int daysInMonth(Date date);
+  int daysInPreviousMonth(Date date);
 };
 
 #endif
