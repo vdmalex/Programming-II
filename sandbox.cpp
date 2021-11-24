@@ -15,10 +15,6 @@
 #include "Person.h"
 #include "myException.h"
 
-// 6.6 times faster than std::bind!
-// anonymous, inline, 1 time functions
-int invoke(int x, int y, function<int(int, int)> func) { return func(x, y); }
-int k = invoke(20, 10, [](int x, int y) -> int { return x + y; });
 
 using namespace std;
 class Class {
@@ -98,7 +94,10 @@ void autoFunc();
 void staticFunc();
 void demoFriend();
 void demoOverloadOperators();
-Date calculateDifference(Date d1, Date d2);
+int add(int x, int y);
+int invoke(int x, int y, function<int(int, int)> func);
+void demoPassFunction();
+int multiply(int x, int y);
 
 int main() {
   bool quit = false;
@@ -107,7 +106,7 @@ int main() {
         << "Modes: \n1. Polymorphism \n2. Procedural Stack Demo "
            "\n3. Functions\n4. Class Inheritance\n5. "
            "Default Parameters\n6. Exceptions\n7. Templates\n8. Static and "
-           "Auto variables\n9. Friend Classes\n10. Overloading Operators\n";
+           "Auto variables\n9. Friend Classes\n10. Overloading Operators\n11. Pass Function\n";
     std::cout << "Enter mode or quit with 0: ";
     int mode;
     std::cin >> mode;
@@ -155,7 +154,7 @@ int main() {
         demoOverloadOperators();
         break;
       case 11:
-
+        demoPassFunction();
         break;
     }
   }
@@ -339,5 +338,16 @@ void demoOverloadOperators() {
   cout << reduced_height << endl;
 
 }
+int add(int x, int y) { return x + y; }
+int multiply(int x, int y) { return x * y; }
+    // 6.6 times faster than std::bind!
+// anonymous, inline, 1 time functions
+int invoke(int x, int y, function<int(int, int)> func) { return func(x, y); }
 
-Date calculateDifference(Date d1, Date d2) { return d1; }
+void demoPassFunction() { std::cout << invoke(1, 50, add)<<std::endl;
+  std::cout << invoke(32, 53, multiply) << std::endl;
+
+// lambda function: [](params)->returnType{functionbody}) 
+int k = invoke(20, 10, [](int x, int y) -> int { return x + y; });
+  std::cout << k << std::endl;
+}
