@@ -1,7 +1,6 @@
 #pragma once
 #include "Person.h"
 
-
 // class Y:{visibility specifier}X{...};
 // class Sub : public Super {
 // Private components will remain private, public components will remain public.
@@ -16,8 +15,7 @@
 // multi-inheritance: 1 class inheriting from 2 different superclasses
 class Mailperson : public Person {
  public:
-	std::string drive() { return "stops";
-  }
-  using Person::Person;						// use Person default constructor
-        void print();
+  std::string drive() { return "stops"; }
+  using Person::Person;  // use Person default constructor
+  void print();
 };

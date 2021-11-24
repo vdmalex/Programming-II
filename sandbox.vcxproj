@@ -143,8 +143,7 @@
     <ClCompile Include="FeetInches.cpp" />
     <ClCompile Include="Firefighter.cpp" />
     <ClCompile Include="Mailperson.cpp" />
-    <ClCompile Include="MyAbstractClass.cpp" />
-    <ClCompile Include="MyInterface.cpp" />
+    <ClCompile Include="myException.cpp" />
     <ClCompile Include="sandbox.cpp" />
     <ClCompile Include="Person.cpp" />
   </ItemGroup>

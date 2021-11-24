@@ -27,16 +27,13 @@
     <ClCompile Include="Date.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyInterface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FeetInches.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Person.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyAbstractClass.cpp">
+    <ClCompile Include="myException.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

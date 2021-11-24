@@ -2,7 +2,4 @@
 #include <string>
 using namespace std;
 
-class myException : public exception {
-
-
-};
+class myException : public exception {};

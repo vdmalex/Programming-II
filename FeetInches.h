@@ -38,7 +38,6 @@ class FeetInches {
     }
     return result;
   }
-  friend std::ostream& operator<<(std::ostream& os, const FeetInches& dt);      
+  friend std::ostream& operator<<(std::ostream& os, const FeetInches& dt);
   // declare ostream a friend class to allow it to access private fields
-
 };

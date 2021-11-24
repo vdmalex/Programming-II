@@ -1,39 +1,39 @@
 #pragma once
 #include <iostream>
 #include <string>
-/*
-creating classes allows us to reuse this code for more applications
-
- class: 				"category" or "genre"
-						"""
-						A class is an aggregate consisting of variables
-						(also called fields or properties)
-						and functions (called methods). 						
-						Both variables and functions are class
-						components.
-						"""
-
-Access specifiers:		private - accessible only within the class
-						public 	- accessible to all users ofthe class 						
-						A function that is a class component
-						has full access to other class 						
-						components, including private ones.
-						protected - A function that is a class component has full access
-						to other class components, including private ones.
-
-Class constructors:		function name that is identical to class name
-						used to construct an object
-						no return type, not even void
-						Class object(param);
-						copy constructor: Class(Class const &sourceobject)
- Memory leaks:			unused (but still allocated) memory
-						grows in size, affecting system performance
-
- Destructors:			~Class()
-						only one destructor allowed
-						no paramaters
-						should not be invoked explicitly
-*/
+/**
+* creating classes allows us to reuse this code for more applications
+* 
+* class: 				"category" or "genre"
+* 						"""
+* 						A class is an aggregate consisting of variables
+* 						(also called fields or properties)
+* 						and functions (called methods). 						
+* 						Both variables and functions are class
+* 						components.
+* 						"""
+* 
+* Access specifiers:	private - accessible only within the class
+* 						public 	- accessible to all users ofthe class 						
+* 						A function that is a class component
+* 						has full access to other class 						
+* 						components, including private ones.
+* 						protected - A function that is a class component has full access
+* 						to other class components, including private ones.
+* 
+* Class constructors:	function name that is identical to class name
+* 						used to construct an object
+* 						no return type, not even void
+* 						Class object(param);
+* 						copy constructor: Class(Class const &sourceobject)
+*  Memory leaks:		unused (but still allocated) memory
+* 						grows in size, affecting system performance
+* 
+*  Destructors:			~Class()
+* 						only one destructor allowed
+* 						no paramaters
+* 						should not be invoked explicitly
+* */
 
 class Person {
  private:
@@ -60,22 +60,23 @@ class Person {
   ~Person() {}  // destructor
 };
 
-// example : class : animal subclasses : mammals,
-//                                      reptiles,
-//                                      birds
-//
-// object:			an instance of a class example : an object named
-// myBird from class birds
-//
-// inheritance:		myBird would inherit all qualities of the
-// superclass(animals),
-//					and any other superclasses such as
-// attributes and methods
-//
-// an object has :	name(myBird) may have properties such as color
-//                  behaviors(methods)
-//
-//      from edube:
-//      a noun, you probably define the object’s name
-//      adjective, you probably define the object’s property
-//		a verb, you probably define the object’s activity
+/**
+* example : class : animal subclasses : mammals,
+*										reptiles,
+*										birds
+* 
+* object:			an instance of a class example : an object named
+*					myBird from class birds
+* 
+* inheritance:		myBird would inherit all qualities of the
+*					superclass(animals), and any other superclasses such as
+*					attributes and methods
+* 
+* an object has :	name(myBird) may have properties such as color
+*					behaviors(methods)
+* 
+* from edube:
+*					a noun, you probably define the object’s name
+*					adjective, you probably define the object’s property	    
+*					a verb, you probably define the object’s activity
+**/
