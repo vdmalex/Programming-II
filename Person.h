@@ -37,7 +37,7 @@
 
 class Person {
  private:
-  int age=1;             // default attributes
+  int age=30;           // default attributes
   std::string name="";  // private fields
   std::string dob="";
   

@@ -51,8 +51,7 @@ std::string Date::getISODate() {
     
 
     result.SetDate(rYear, rMonth, rDay);
-    /*result.SetDate(m_year - d1.getYear(), m_month - d1.getMonth(),
-                   m_day - d1.getDay());*/
+
 
     return result;
   }  

@@ -15,7 +15,6 @@
 #include "Person.h"
 #include "myException.h"
 
-
 using namespace std;
 class Class {
   friend class Friend;
@@ -106,7 +105,8 @@ int main() {
         << "Modes: \n1. Polymorphism \n2. Procedural Stack Demo "
            "\n3. Functions\n4. Class Inheritance\n5. "
            "Default Parameters\n6. Exceptions\n7. Templates\n8. Static and "
-           "Auto variables\n9. Friend Classes\n10. Overloading Operators\n11. Pass Function\n";
+           "Auto variables\n9. Friend Classes\n10. Overloading Operators\n11. "
+           "Pass Function\n";
     std::cout << "Enter mode or quit with 0: ";
     int mode;
     std::cin >> mode;
@@ -187,12 +187,13 @@ void demoExceptions() {
                       // execution the C++ language (unlike some other newer
                       // programming languages), division by zero doesn’t throw
                       // an exception by default
-      throw std::invalid_argument("");
+      throw std::invalid_argument("");  // think of throw as a call
     }
     std::cout << 5 / num2;  // try this
                             // end try scope
   } catch (const std::invalid_argument&
-               ex) {  // catches a thrown std::invalid_argument
+               ex) {  // catches a thrown std::invalid_argument -> function call
+                      // definition
     std::cout << "Can't divide by 0" << std::endl;  // this line will execute
   } catch (const std::exception& ex) {              // example of polymorphism
     std::cout << "Caught you" << std::endl;
@@ -206,22 +207,22 @@ void ClassInheritance() {
   person.walk();
 
   std::cout << "Person age after walk: " << person.getAge() << std::endl;
+  // subclasses inherit all base class methods and attributes and can freely access any of them
   Mailperson mail;
-  std::cout << mail.Person::drive() << std::endl;
-  std::cout << "Mailperson after Person::drive() : "
-            << mail.Person::drive()  // using parent class function
-            << std::endl
-            << "this shows we can use parent methods" << std::endl
-            << "after mail.drive() : " << mail.drive()
-            << std::endl  // using derived method
-            << "and derived methods!" << std::endl
-            << "However, std::cout << person.Mailperson::drive() is illegal"
-            << std::endl;
+  std::cout << mail.Person::drive() << std::endl;  // using parent function
+  std::cout << mail.getAge()<<std::endl;
+  std::cout << mail.drive() << std::endl;  // using derived method
+                                           // does not work the other way ex:
+  // person.Mailperson::drive() would result in an error
+
   Firefighter fighter;
-  std::cout << "Firefighter drive(): " << fighter.drive() << std::endl;
-  std::cout << "fighter.Mailperson::drive(); // illegal"
-            << std::endl;  // cannot use adjacent subclasses, not inheriting
-                           // from mailperson
+  std::cout << fighter.drive() << std::endl;
+  std::cout << fighter.getAge() << std::endl;
+  
+  // similarly, we cannot access Mailpersons methods by a Firefighter
+  // ex: fighter.Mailperson::drive() is illegal
+  // cannot use adjacent subclasses, not inheriting
+  // from mailperson
 }
 
 void demoPolymorphism() {
@@ -241,7 +242,7 @@ void demoPolymorphism() {
       // static cast as mailperson to use mailperson's drive method
       << static_cast<Firefighter*>(regular)->drive()
       // will result in Firefighter's method UNLESS superclass drive is virtual
-      // from edube.org on static_cast
+      // (runtime vs compile time polymorphism) from edube.org on static_cast
       /*I am of sound mind,
       I know what I am doing and I want to use the pointer to the superclass in
       relation to the object of the subclass;
@@ -311,18 +312,16 @@ void demoOverloadOperators() {
    **/
   Date halloween(2021, 10, 31);
   Date christmas(2021, 12, 25);
-  
+
   Date difference;
   difference = christmas - halloween;
-  // days from halloween to christmas
-  std::cout << difference<<std::endl;
-
+  // overloaded function - to calculate days from halloween to christmas
+  std::cout << difference << std::endl;
+  // overloaded function to display Date data
   Date birthday(1996, 07, 10);
   difference = christmas - birthday;
   std::cout << difference << std::endl;
-  // std::cout << difference << endl;
-  // add calculateDifference(m1,m2)
-  // std::cout << halloween - today << std::endl;
+
   int feet1 = 4;
   int feet2 = 3;
   int inches1 = 4;
@@ -336,18 +335,18 @@ void demoOverloadOperators() {
 
   FeetInches reduced_height = height1 - height2;
   cout << reduced_height << endl;
-
 }
 int add(int x, int y) { return x + y; }
 int multiply(int x, int y) { return x * y; }
-    // 6.6 times faster than std::bind!
+// 6.6 times faster than std::bind!
 // anonymous, inline, 1 time functions
 int invoke(int x, int y, function<int(int, int)> func) { return func(x, y); }
 
-void demoPassFunction() { std::cout << invoke(1, 50, add)<<std::endl;
+void demoPassFunction() {
+  std::cout << invoke(1, 50, add) << std::endl;
   std::cout << invoke(32, 53, multiply) << std::endl;
 
-// lambda function: [](params)->returnType{functionbody}) 
-int k = invoke(20, 10, [](int x, int y) -> int { return x + y; });
+  // lambda function: [](params)->returnType{functionbody})
+  int k = invoke(20, 10, [](int x, int y) -> int { return x + y; });
   std::cout << k << std::endl;
 }
