@@ -146,6 +146,7 @@
     <ClCompile Include="myException.cpp" />
     <ClCompile Include="sandbox.cpp" />
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="StaticMember.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="MyAbstractClass.h" />
     <ClInclude Include="Functions.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="StaticMember.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

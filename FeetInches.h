@@ -9,6 +9,7 @@ class FeetInches {
   FeetInches() {
     feet = 0;
     inches = 0;
+
   }
   FeetInches(int feet1, int inch1) {
     feet = feet1;

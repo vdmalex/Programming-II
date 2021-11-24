@@ -13,7 +13,9 @@
 #include "Mailperson.h"
 #include "MyAbstractClass.h"
 #include "Person.h"
+#include "StaticMember.h"
 #include "myException.h"
+int StaticMember::amount;  // allow static variable in the main cpp file
 
 using namespace std;
 class Class {
@@ -97,6 +99,7 @@ int add(int x, int y);
 int invoke(int x, int y, function<int(int, int)> func);
 void demoPassFunction();
 int multiply(int x, int y);
+void staticClassMember();
 
 int main() {
   bool quit = false;
@@ -207,10 +210,11 @@ void ClassInheritance() {
   person.walk();
 
   std::cout << "Person age after walk: " << person.getAge() << std::endl;
-  // subclasses inherit all base class methods and attributes and can freely access any of them
+  // subclasses inherit all base class methods and attributes and can freely
+  // access any of them
   Mailperson mail;
   std::cout << mail.Person::drive() << std::endl;  // using parent function
-  std::cout << mail.getAge()<<std::endl;
+  std::cout << mail.getAge() << std::endl;
   std::cout << mail.drive() << std::endl;  // using derived method
                                            // does not work the other way ex:
   // person.Mailperson::drive() would result in an error
@@ -218,7 +222,7 @@ void ClassInheritance() {
   Firefighter fighter;
   std::cout << fighter.drive() << std::endl;
   std::cout << fighter.getAge() << std::endl;
-  
+
   // similarly, we cannot access Mailpersons methods by a Firefighter
   // ex: fighter.Mailperson::drive() is illegal
   // cannot use adjacent subclasses, not inheriting
@@ -274,6 +278,7 @@ void demoStaticAuto() {
   for (int i = 0; i < 5; ++i) {
     autoFunc();  // will result in the same value
   }
+  staticClassMember();
 }
 
 void autoFunc() {
@@ -286,7 +291,19 @@ void staticFunc() {
   static int var = 99;  // exist continuously during the whole program execution
   cout << "static var = " << ++var << endl;
 }
-
+void staticClassMember() {
+  StaticMember member1;
+  std::cout << member1.getAmount() << std::endl;
+  // set up so every time an object is constructed it will increment
+  StaticMember member2;
+  StaticMember member3;
+  StaticMember member4;
+  // will output the same value for all members
+  std::cout << member1.getAmount() << std::endl;
+  std::cout << member2.getAmount() << std::endl;
+  std::cout << member3.getAmount() << std::endl;
+  std::cout << member4.getAmount() << std::endl;
+}
 void demoFriend() {
   // usually, we will use inheritance over friend classes
   // see declaration of classes near top of main
