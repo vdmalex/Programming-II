@@ -1,8 +1,7 @@
 #include "FeetInches.h"
+
 #include <iostream>
 #include <string>
-
-
 
 std::ostream& operator<<(
     std::ostream& os,

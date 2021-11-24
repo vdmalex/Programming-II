@@ -311,11 +311,16 @@ void demoOverloadOperators() {
    * precedence and associativity remain the same
    **/
   Date halloween(2021, 10, 31);
-  std::cout << halloween.getMonth() << std::endl;
-  Date today;
-
+  Date christmas(2021, 12, 25);
+  
   Date difference;
-  difference = today - halloween;
+  difference = christmas - halloween;
+  // days from halloween to christmas
+  std::cout << difference<<std::endl;
+
+  Date birthday(1996, 07, 10);
+  difference = christmas - birthday;
+  std::cout << difference << std::endl;
   // std::cout << difference << endl;
   // add calculateDifference(m1,m2)
   // std::cout << halloween - today << std::endl;
@@ -332,6 +337,7 @@ void demoOverloadOperators() {
 
   FeetInches reduced_height = height1 - height2;
   cout << reduced_height << endl;
+
 }
 
 Date calculateDifference(Date d1, Date d2) { return d1; }

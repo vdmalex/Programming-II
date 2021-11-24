@@ -27,14 +27,21 @@ std::string Date::getISODate() {
 // operator overloading
     
   Date Date::operator-(Date d1) { 
+  // date1 - date2;
+  // *this - d1
+  // this should be bigger than d1
+
   Date result;
   int rDay;
   int rMonth;
   int rYear;
-  if (m_day < d1.getDay())
-    rDay = m_day - d1.getDay() + daysInPreviousMonth(*this);
-  else
-    rDay = m_day - d1.getDay();
+  
+  if (d1.getDay() > m_day) {
+    rDay = m_day-d1.getDay() + daysInPreviousMonth(*this);
+    this->setMonth(m_month-1);
+  }
+  else rDay = m_day-d1.getDay(); 
+
   rYear = m_year - d1.getYear();
     if (m_month < d1.getMonth()) {
       rMonth = m_month - d1.getMonth() + 12;
@@ -79,6 +86,14 @@ std::string Date::getISODate() {
       default:
         return 30;
     }
+  }
+
+    std::ostream& operator<<(
+      std::ostream& os,
+      const Date& d1) {  // declaration of << overloading for Date
+    os << d1.m_year << '-' << d1.m_month << '-' << d1.m_day;
+
+    return os;
   }
 
   
